@@ -21,7 +21,12 @@ module.exports = function() {
 
   const Queues = require('./queue');
   app.locals.Queues = new Queues(defaultConfig);
-  app.locals.basePath = '';
+  
+  if (defaultConfig.listenOpts && defaultConfig.listenOpts.basePath) {
+    app.locals.basePath = defaultConfig.listenOpts.basePath;
+  } else {
+    app.locals.basePath = '';
+  }
 
   app.set('views', `${__dirname}/views`);
   app.set('view engine', 'hbs');

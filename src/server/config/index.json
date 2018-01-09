@@ -7,5 +7,10 @@
       "hostId": "AWS Server 2"
     }
   ],
-  "queues": []
+  "queues": [],
+  "__example__listenOpts": {
+    "basePath": "/arena"
+  },
+  "listenOpts": {
+  }
 }
